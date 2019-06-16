@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace SqaAssignment2
 {
-    class TriangleSolver
+    static class TriangleSolver
     {
+
+        static string Analyze(int sideOne, int sideTwo, int sideThree)
+        {
+            string typeTriangle = string.Empty;
+
+
+
+            return typeTriangle;
+        }
+
     }
 }
