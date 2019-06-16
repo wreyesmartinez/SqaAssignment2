@@ -26,6 +26,14 @@ namespace SqaAssignment2
         {
             Rectangle rect = new Rectangle();
 
+            string firstSide = string.Empty;
+            string secondSide = string.Empty;
+            string thirdSide = string.Empty;
+
+            int firstSides = 0;
+            int secondSides = 0;
+            int thirdSides = 0;
+
             Console.WriteLine("***************************************");
             Console.WriteLine("* Welcome to assignment 2 - Triangles *");
             Console.WriteLine("***************************************");
@@ -89,18 +97,18 @@ namespace SqaAssignment2
                 {
                     case 1:
 
-                        length = string.Empty;
-                        lengths = 0;
+                        firstSide = string.Empty;
+                        firstSides = 0;
                         do
                         {
-                            if (length != string.Empty)
+                            if (firstSide != string.Empty)
                             {
                                 Console.WriteLine("Input error: Please enter a number greater than zero");
                             }
-                            Console.Write("Please enter the new LENGTH of the rectangle: ");
-                            length = Console.ReadLine();
-                        } while (!int.TryParse(length, out lengths) || (lengths <= 0));
-                        rect.SetLength(lengths);
+                            Console.Write("Please enter the first number ");
+                            firstSide = Console.ReadLine();
+                        } while (!int.TryParse(firstSide, out firstSides) || (firstSides <= 0));
+                        rect.SetLength(firstSides);
                         Console.WriteLine("The LENGTH of your rectangle has been changed SUCCESSFULLY!");
                         Console.WriteLine("ENTER to continue...");
                         Console.ReadKey();
