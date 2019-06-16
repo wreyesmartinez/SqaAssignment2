@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SqaAssignment2
 {
-    static class TriangleSolver
+    public static class TriangleSolver
     {
 
         public static int sideOne;

@@ -1,14 +1,28 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using SqaAssignment2;
 
 namespace SqaAssignment2.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethod1()
+        [Test]
+        public void Analyze_RetrivingInfo_ReturnsFalse()
         {
+            //Arrange
+            int sideA = 0;
+            int sideB = 0;
+            int sideC = 0;
+
+            var rectangle = TriangleSolver.Analyze(sideA, sideB, sideC);
+
+            //Act
+            
+
+            //Assert
+            Assert.AreEqual(rectangle, "");
         }
+
+       
     }
 }
