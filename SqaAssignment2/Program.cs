@@ -106,7 +106,9 @@ namespace SqaAssignment2
                             thirdSide = Console.ReadLine();
                         } while (!int.TryParse(thirdSide, out thirdSides) || (thirdSides <= 0));
 
-
+                        /**
+                         *  Calling the Analyze method in TriangleSolver class
+                         **/
                         string triangle = TriangleSolver.Analyze(firstSides, secondSides, thirdSides);
                         if (triangle.Equals(""))
                             Console.WriteLine("The numbers entered DO NOT form a triangle");
