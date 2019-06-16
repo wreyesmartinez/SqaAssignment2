@@ -22,15 +22,16 @@ namespace SqaAssignment2
             string typeTriangle = string.Empty;
             
             if (validateNumbers())
-                if (triangleInequalityTheorem())
-                {
-                    if ((sideOne == sideTwo) && (sideOne == sideThree))
-                        typeTriangle = "Equilateral";
-                    else if( (sideOne == sideTwo) || (sideOne == sideThree) || (sideTwo == sideThree))
-                        typeTriangle = "Isosceles";
-                    else if ((sideOne != sideTwo) || (sideOne != sideThree) || (sideTwo != sideThree))
-                        typeTriangle = "Scalene";
-                }
+                if (angleTriangle())
+                    if(triangleInequalityTheorem()) 
+                    {
+                        if ((sideOne == sideTwo) && (sideOne == sideThree))
+                            typeTriangle = "Equilateral";
+                        else if( (sideOne == sideTwo) || (sideOne == sideThree) || (sideTwo == sideThree))
+                            typeTriangle = "Isosceles";
+                        else if ((sideOne != sideTwo) || (sideOne != sideThree) || (sideTwo != sideThree))
+                            typeTriangle = "Scalene";
+                    }
             return typeTriangle;
         }
 
@@ -50,6 +51,20 @@ namespace SqaAssignment2
                 return true;
             else
                 return false;
+        }
+
+        public static bool angleTriangle()
+        {
+            double cosA = ((Math.Pow(sideTwo, 2)) + (Math.Pow(sideThree, 2)) - (Math.Pow(sideOne, 2))) / (2 * (sideTwo * sideThree));
+            double aAngle = Math.Round(Math.Acos(cosA), 2);
+
+            double cosB = ((Math.Pow(sideThree, 2)) + (Math.Pow(sideOne, 2)) - (Math.Pow(sideTwo, 2))) / (2 * (sideThree* sideOne));
+            double bAngle = Math.Round(Math.Acos(cosB), 2);
+
+            double cAngle = 180 - aAngle - bAngle;
+            Console.WriteLine("angle C: ", cAngle);
+            
+            return (aAngle + bAngle + cAngle) == 180;
         }
 
     }
