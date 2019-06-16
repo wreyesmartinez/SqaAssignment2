@@ -9,11 +9,9 @@ namespace SqaAssignment2
     static class TriangleSolver
     {
 
-        static string Analyze(int sideOne, int sideTwo, int sideThree)
+        public static string Analyze(int sideOne, int sideTwo, int sideThree)
         {
             string typeTriangle = string.Empty;
-
-
 
             return typeTriangle;
         }

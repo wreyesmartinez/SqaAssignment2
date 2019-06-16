@@ -24,7 +24,6 @@ namespace SqaAssignment2
 
         public void go()
         {
-            Rectangle rect = new Rectangle();
 
             string firstSide = string.Empty;
             string secondSide = string.Empty;
@@ -37,34 +36,6 @@ namespace SqaAssignment2
             Console.WriteLine("***************************************");
             Console.WriteLine("* Welcome to assignment 2 - Triangles *");
             Console.WriteLine("***************************************");
-
-            //string length = string.Empty;
-            //int lengths = 0;
-            //do
-            //{
-            //    if (length != string.Empty)
-            //    {
-            //        Console.WriteLine("Input error: Please enter a number greater than zero");
-            //    }
-            //    Console.Write("Please enter the LENGTH of the rectangle: ");
-            //    length = Console.ReadLine();
-            //} while (!int.TryParse(length, out lengths) || (lengths <= 0));
-
-            //rect.SetLength(lengths);
-
-            //string width = string.Empty;
-            //int widths = 0;
-            //do
-            //{
-            //    if (width != string.Empty)
-            //    {
-            //        Console.WriteLine("Input error: Please enter a number greater than zero");
-            //    }
-            //    Console.Write("Please enter the WIDTH of the rectangle: ");
-            //    width = Console.ReadLine();
-            //} while (!int.TryParse(width, out widths) || (widths <= 0));
-
-            //rect.SetWidth(widths);
 
             bool keepMenu = true;
             do
@@ -108,10 +79,43 @@ namespace SqaAssignment2
                             Console.Write("Please enter the first number ");
                             firstSide = Console.ReadLine();
                         } while (!int.TryParse(firstSide, out firstSides) || (firstSides <= 0));
-                        rect.SetLength(firstSides);
-                        Console.WriteLine("The LENGTH of your rectangle has been changed SUCCESSFULLY!");
-                        Console.WriteLine("ENTER to continue...");
+
+                        secondSide = string.Empty;
+                        secondSides = 0;
+                        do
+                        {
+                            if (secondSide != string.Empty)
+                            {
+                                Console.WriteLine("Input error: Please enter a number greater than zero");
+                            }
+                            Console.Write("Please enter the second number ");
+                            secondSide = Console.ReadLine();
+                        } while (!int.TryParse(secondSide, out secondSides) || (secondSides <= 0));
+
+                        thirdSide = string.Empty;
+                        thirdSides = 0;
+                        do
+                        {
+                            if (thirdSide != string.Empty)
+                            {
+                                Console.WriteLine("Input error: Please enter a number greater than zero");
+                            }
+                            Console.Write("Please enter the third number ");
+                            thirdSide = Console.ReadLine();
+                        } while (!int.TryParse(thirdSide, out thirdSides) || (thirdSides <= 0));
+
+
+                        string triangle = TriangleSolver.Analyze(firstSides, secondSides, thirdSides);
+                        if (triangle.Equals(""))
+                            Console.WriteLine("The numbers entered do not form a triangle");
+                        else
+                        {
+                            Console.WriteLine("The numbers entered do form a triangle");
+                            Console.WriteLine("The triangle is " + triangle);
+                        }
+                            
                         Console.ReadKey();
+
                         break;                    
                     case 2:
                         // Program exits
